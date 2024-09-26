@@ -45,7 +45,9 @@ export default function TextForm(props) {
   };
   const [text, setText] = useState("Enter text here");
   let len = text.length;
-  let len2 = text.split(" ").filter((word) => word.trim() !== "").length;
+  let len2 = text.split(" ").filter((word) => {
+    return word.length !== 0;
+  }).length;
   // setText("Enter text");
   return (
     <>
